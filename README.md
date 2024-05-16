@@ -14,7 +14,19 @@ Para cada tipo de producto puedes visualizar distintas caracteristicas de cada u
   - Consola
   - Accesorio
 - Inventario (Composición de Productos)
-- Carrito (Composición del Inventario)
+- Carrito (Agregación de Productos)
 
 ## Funcionalidad.
 El programa servirá para la tienda de videojugos como un punto de venta en línea mediante el cual pueden ofrecer a sus clientes sus productos así como una descripción de ellos.
+
+## Consideraciones.
+
+Se deben de descargagr todos los archivos, cada clase y el main. 
+Todo el código esta realizado con C++
+Compilar con "g++ main.cpp"
+Correr en windows con: "a.exe"
+
+## Diagrama UML
+![TiendaVideojuegos drawio](https://github.com/nicoleum17/TC1030_FJ24/assets/142357118/b6abdcbc-0f81-4cfd-bcd3-3169b908a2be)
+
+
