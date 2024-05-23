@@ -27,6 +27,7 @@ Compilar con "g++ main.cpp"
 Correr en windows con: "a.exe"
 
 ## Diagrama UML
-![TiendaVideojuegos drawio](https://github.com/nicoleum17/TC1030_FJ24/assets/142357118/b6abdcbc-0f81-4cfd-bcd3-3169b908a2be)
+![TiendaVideojuegos drawio (1)](https://github.com/nicoleum17/TC1030_FJ24/assets/142357118/3995c193-04e6-42c8-925f-9c5880fe8386)
+
 
 
