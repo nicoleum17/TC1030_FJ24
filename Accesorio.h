@@ -36,6 +36,8 @@ class Accesorio:public Producto{
         //Métodos
         void cantBateria();
         void mostrarProducto(); //Sobreescritura
+        void solicitarAtributos();
+
 };
 
 ///Implementación
@@ -64,6 +66,15 @@ void Accesorio::mostrarProducto(){
     cout << "Plataforma: " << plataforma << endl;
     cout << "Bateria: " << bateria << endl;
     cout << "Conexion: " << conexion << endl;
+}
+
+void Accesorio::solicitarAtributos() {
+    cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
+    cout << "Ingrese el precio: "; cin >> precio;
+    cout << "Ingrese la plataforma: "; getline(cin, plataforma);
+    cout << "Ingrese el tipo de producto: "; cin >> tipo;
+    cout << "Ingresa el tipo de batería del accesorio: "; getline(cin, bateria);
+    cout << "Ingresa el tipo de conexión del accesorio: "; getline(cin, conexion);
 }
 
 #endif

@@ -47,6 +47,8 @@ class Juego:public Producto{
         void reproducirTrailer();
         void verificarMultiJugador();
         void mostrarProducto(); //Sobreescritura
+        void solicitarAtributos();
+
 };
 
 ///Implementación
@@ -98,6 +100,17 @@ void Juego::mostrarProducto(){
     cout << "Desarrollador: " << desarrollador << endl;
     cout << "Clasificacion: " << clasificacion << endl;
     cout << "Cantidad Maxima de Juegadores: " << jugadoresMax << endl;
+}
+
+void Juego::solicitarAtributos() {
+    cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
+    cout << "Ingrese el precio: "; cin >> precio;
+    cout << "Ingrese la plataforma: "; getline(cin, plataforma);
+    cout << "Ingrese el tipo de producto: "; cin >> tipo;
+    cout << "Ingresa el género del juego: "; getline(cin, genero);
+    cout << "Ingresa el desarrollador del juego: "; getline(cin, desarrollador);
+    cout << "Ingresa la clasificación del juego: "; cin >> clasificacion;
+    cout << "Ingresa el número máximo de jugadores: "; cin >> jugadoresMax;
 }
 
 

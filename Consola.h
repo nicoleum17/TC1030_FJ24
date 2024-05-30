@@ -42,6 +42,8 @@ class Consola:public Producto{
         void configuracion();
 
         void mostrarProducto(); //Sobreescritura
+        void solicitarAtributos();
+
 };
 
 ///Implementación
@@ -68,7 +70,7 @@ void Consola::ejecutarJuego(){
 void Consola::configuracion(){
     string respuestas;
 
-    cout << "Iniciar Sesión: "; cin >> respuestas;
+    cout << "Iniciar Sesion: "; cin >> respuestas;
     cout << "¿Conectar cable HDMI?: "; cin >> respuestas;
     cout << "Selecciona la entrada: "; cin >> respuestas;
     cout << "Conexión Wi-Fi o cable Ethernet: "; cin >> respuestas;
@@ -83,6 +85,16 @@ void Consola::mostrarProducto(){
     cout << "Fabricante: " << fabricante << endl;
     cout << "Modelo: " << modelo << endl;
     cout << "Almacenamiento: " << almacenamiento << endl;
+}
+
+void Consola::solicitarAtributos() {
+    cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
+    cout << "Ingrese el precio: "; cin >> precio;
+    cout << "Ingrese la plataforma: "; getline(cin, plataforma);
+    cout << "Ingrese el tipo de producto: "; cin >> tipo;
+    cout << "Ingresa el fabricante de la consola: "; getline(cin, fabricante);
+    cout << "Ingresa el modelo de la consola: "; getline(cin, modelo);
+    cout << "Ingresa el almacenamiento de la consola: "; cin >> almacenamiento;
 }
 
 #endif

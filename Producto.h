@@ -32,7 +32,11 @@ class Producto{
 
         //Métodos
         void actualizarPrecio(float);
-        void mostrarProducto();
+        virtual void mostrarProducto();
+        virtual void solicitarAtributos();
+
+        // Destructor virtual
+        virtual ~Producto() { }
 };
 
 ///Implementación
@@ -84,5 +88,11 @@ void Producto::mostrarProducto(){
     cout << "Plataforma: " << plataforma << endl;
 }
 
+void Producto::solicitarAtributos() {
+    cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
+    cout << "Ingrese el precio: "; cin >> precio;
+    cout << "Ingrese la plataforma: "; getline(cin, plataforma);
+    cout << "Ingrese el tipo de producto: "; cin >> tipo;
+}
 
 #endif
