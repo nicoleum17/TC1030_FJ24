@@ -8,7 +8,9 @@ using namespace std;
 #ifndef ACCESORIO
 #define ACCESORIO
 
-// Clase Hija: Accesorio
+/* * * * * * * * * * * * Clase Accesorio * * * * * * * * * * * * */
+// Clase Hija de Producto
+
 class Accesorio:public Producto{
     private:
         //Atributos
@@ -40,9 +42,9 @@ class Accesorio:public Producto{
 
 };
 
-///Implementación
+/* * * * * * * * * * * * Implementación * * * * * * * * * * * * */
 
-//Setters
+//* * * * * * * Setters
 void Accesorio::setBateria(string bat){
     bateria = bat;
 }
@@ -51,15 +53,31 @@ void Accesorio::setConexion(string con){
     conexion = con;
 }
 
-//Métodos
+//* * * * * * * Métodos 
 
-//Con base en un numero aleatorio, mostramos la bateria del accesorio
+/*
+ * * * * * * * * * * * * * Iniciar Inventario * * * * * * * * * * * * *
+ * 
+ * Con base en un numero aleatorio, mostramos la bateria del accesorio
+ * 
+ * Param: -
+ * Return: -
+ */
+
 void Accesorio::cantBateria(){
     srand(time(NULL));
     cout<< "Cantidad de Bateria: " << rand() % 101 << endl;
 }
 
-//Mostramos en pantalla los atributos del Accesorio
+/*
+ * * * * * * * * * * * * * Mostrar Producto * * * * * * * * * * * * *
+ * 
+ * Mostramos en pantalla los atributos del producto mediante cout
+ * 
+ * Param: -
+ * Return: -
+ */
+
 void Accesorio::mostrarProducto(){
     cout << "Nombre: " << nombre << endl;
     cout << "Precio: " << precio << endl;
@@ -67,6 +85,15 @@ void Accesorio::mostrarProducto(){
     cout << "Bateria: " << bateria << endl;
     cout << "Conexion: " << conexion << endl;
 }
+
+/*
+ * * * * * * * * * * * * * Solicitar Atributos * * * * * * * * * * * * *
+ * 
+ * Solicitamos al usuario cada atributo de la clase
+ * 
+ * Param: -
+ * Return: -
+ */
 
 void Accesorio::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);

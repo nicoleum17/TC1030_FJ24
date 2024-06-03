@@ -1,5 +1,16 @@
+/*
+ * Proyecto Tienda de Videojuegos: Clase Carrito
+ * Joanna Nicole Uriostegui Magaña
+ * A01711853
+ * 03/06/2024
+ * 
+ * Clase Carrito que es una agregación de los productos
+ * instanciados en la clase inventario. 
+ * Permite al usuario elegir productos para comprarlos.
+ * 
+ */
+
 #include <iostream>
-#include <time.h>
 using namespace std;
 
 #include "Producto.h"
@@ -10,7 +21,7 @@ using namespace std;
 #ifndef CARRITO
 #define CARRITO
 
-//Clase Carrito
+/* * * * * * * * * * * * Clase Carrito * * * * * * * * * * * * */
 class Carrito {
     private: 
         //Atributos
@@ -36,30 +47,51 @@ class Carrito {
         void quitarProd(int);
         void mostrarCarrito();
         float calcularTotal();
-        void aplicarDesc(); //falta de implementar
+        void aplicarDesc(); 
 };
 
-///Implementación
+/* * * * * * * * * * * * Implementación * * * * * * * * * * * * */
 
-//Constructor sobrecargado
+//* * * * * * * Constructor sobrecargado
 Carrito::Carrito(string name){
     usuario = name;
     numCompras = 0;
 }
-
-//Setter
+ 
+// * * * * * * * Setter
 
 void Carrito::setUsuario(string name){
     usuario = name;
 }
 
-//Recibimos un objeto de tipo producto y lo agregamos al array
+//* * * * * * * Métodos 
+
+/*
+ * * * * * * * * * * * * * Agregar Producto * * * * * * * * * * * * *
+ * 
+ * Recibimos un objeto de tipo producto y lo agregamos 
+ * al array de punteros de tipo Producto "compras".
+ * 
+ * Param: Puntero de tipo Juego, Consola o Accesorio
+ * Return: -
+ */
+
 void Carrito::agregarProd(Producto* prod) {
     compras[numCompras] = prod;
     numCompras++;
 }
 
-//Eliminamos el producto del carrito según el indice indicado
+/*
+ * * * * * * * * * * * * * Quitar Producto * * * * * * * * * * * * *
+ * 
+ * Eliminamos el producto del carrito según el indice indicado.
+ * Se verifica la validez del índice y luego se recorre cada 
+ * producto posterior al indicado.
+ * 
+ * Param: Int que representa el indice
+ * Return: -
+ */
+
 void Carrito::quitarProd(int indice) {
     if (indice < 0 || indice >= numCompras) {
         cout << "Indice invalido." << endl;
@@ -71,7 +103,17 @@ void Carrito::quitarProd(int indice) {
     numCompras--;
 }
 
-//Mostramos en pantalla los objetos que componen al array de compras
+/*
+ * * * * * * * * * * * * * Mostrar Carrito * * * * * * * * * * * * *
+ * 
+ * Mostramos en pantalla los objetos que componen al array de compras
+ * Recorre todo el array de 'compras' imprimiendo de acuerdo a cada
+ * tipo de producto sus respectivos atributos.
+ * 
+ * Param: -
+ * Return: -
+ */
+
 void Carrito::mostrarCarrito() {
     cout << "\nCarrito: \n"; 
     for (int i = 0; i < numCompras; i++) {
@@ -80,7 +122,17 @@ void Carrito::mostrarCarrito() {
     }
 }
 
-//Calculamos el total de la compra
+/*
+ * * * * * * * * * * * * * * Calcular Total * * * * * * * * * * * * *
+ * 
+ * Calculamos el total de la compra
+ * Recorre el array de compras y obtiene el precio de cada tipo
+ * mientras lo suma los suma al float total.
+ * 
+ * Param: -
+ * Return: Float de la suma de los precios de artículos en el carrito
+ */
+
 float Carrito::calcularTotal(){
     float total = 0;
     for(int i = 0; i < numCompras; i++){
@@ -89,8 +141,19 @@ float Carrito::calcularTotal(){
     return total;
 }
 
+/*
+ * * * * * * * * * * * * Aplicar Descuento * * * * * * * * * * * *
+ * 
+ * Aplica un descuento del 20% cuando hay dos productos iguales.
+ * Recorre el array para identificar si hay algún producto repetido
+ * para guardar el índice y el cupon con un 20%. Para luego obtener
+ * el precio del artículo y modificarlo en el array de compras.
+ * 
+ * Param: -
+ * Return: -
+ */
+
 void Carrito::aplicarDesc(){
-    srand(time(NULL));
     int indice;
     float cupon;
 

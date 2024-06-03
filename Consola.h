@@ -7,7 +7,9 @@ using namespace std;
 #ifndef CONSOLA
 #define CONSOLA
 
-//Clase Hija: Consola
+/* * * * * * * * * * * * Clase Consola * * * * * * * * * * * * */
+//Clase Hija de Producto
+
 class Consola:public Producto{
     private:
         //Atributos
@@ -46,9 +48,9 @@ class Consola:public Producto{
 
 };
 
-///Implementación
+/* * * * * * * * * * * * Implementación * * * * * * * * * * * * */
 
-//Setters
+//* * * * * * * Setters
 void Consola::setFabricante(string fab){
     fabricante = fab;
 }
@@ -65,8 +67,17 @@ void Consola::ejecutarJuego(){
     cout << "Ejecutando Juego ...\n.\n.\n.\n";
 }
 
-//Métodos
-// Realizamos preguntas al usuario para configurar su consola
+//* * * * * * * Métodos 
+
+/*
+ * * * * * * * * * * * * * Configuración * * * * * * * * * * * * *
+ * 
+ * Realizamos preguntas al usuario para configurar su consola
+ * 
+ * Param: 
+ * Return: 
+ */
+
 void Consola::configuracion(){
     string respuestas;
 
@@ -77,7 +88,15 @@ void Consola::configuracion(){
     cout << "Ajuste de audio: "; cin >> respuestas;
 }
 
-//Mostramos en pantalla los atributos de la consola
+/*
+ * * * * * * * * * * * * * Mostrar Producto * * * * * * * * * * * * *
+ * 
+ * Mostramos en pantalla los atributos del producto mediante cout
+ * 
+ * Param: -
+ * Return: -
+ */
+
 void Consola::mostrarProducto(){
     cout << "Nombre: " << nombre << endl;
     cout << "Precio: " << precio << endl;
@@ -86,6 +105,15 @@ void Consola::mostrarProducto(){
     cout << "Modelo: " << modelo << endl;
     cout << "Almacenamiento: " << almacenamiento << endl;
 }
+
+/*
+ * * * * * * * * * * * * * Solicitar Atributos * * * * * * * * * * * * *
+ * 
+ * Solicitamos al usuario cada atributo de la clase
+ * 
+ * Param: -
+ * Return: -
+ */
 
 void Consola::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);

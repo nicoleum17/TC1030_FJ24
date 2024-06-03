@@ -7,7 +7,8 @@ using namespace std;
 #ifndef JUEGO
 #define JUEGO
 
-//Clase Hija: Juego
+/* * * * * * * * * * * * Clase Juego * * * * * * * * * * * * */
+//Clase Hija de Clase Producto
 class Juego:public Producto{
     private:
         //Atributos
@@ -51,9 +52,9 @@ class Juego:public Producto{
 
 };
 
-///Implementación
+/* * * * * * * * * * * * Implementación * * * * * * * * * * * * */
 
-//Getters
+//* * * * * * * Setters
 void Juego::setGenero(string gen){
     genero = gen;
 }
@@ -70,15 +71,32 @@ void Juego::setJugMax(int max){
     jugadoresMax = max;
 }
 
-//Métodos
+//* * * * * * * Métodos 
 
-//Mostramos en pantalla que se reproduce el trailer del juego
+/*
+ * * * * * * * * * * * * * Reproducir Trailer * * * * * * * * * * * * *
+ * 
+ * Mostramos en pantalla que se reproduce el trailer del juego
+ * Param: -
+ * Return: -
+ */
+
 void Juego::reproducirTrailer(){
     cout << "Reproduciendo Trailer . . .";
     cout << ".\n.\n.\n";
 }
 
-//Mostramos la cantidad de jugadores máximos para el juego
+/*
+ * * * * * * * * * * * * * Verificar Multijugador * * * * * * * * * * * * *
+ * 
+ * Mostramos la cantidad de jugadores máximos para el juego.
+ * Con el condicional if evaluamos la cantidad de jugadores máximos posibles
+ * en el juego y lo mostramos en pantalla.
+ * 
+ * Param: -
+ * Return: -
+ */
+
 void Juego::verificarMultiJugador()
 {
     //Condicional respecto a la cantidad de jugadores máximos
@@ -91,7 +109,15 @@ void Juego::verificarMultiJugador()
     }
 }
 
-//Mostramos en pantalla los atributos del Juego
+/*
+ * * * * * * * * * * * * * Mostrar Producto * * * * * * * * * * * * *
+ * 
+ * Mostramos en pantalla los atributos del producto mediante cout
+ * 
+ * Param: -
+ * Return: -
+ */
+
 void Juego::mostrarProducto(){
     cout << "Nombre: " << nombre << endl;
     cout << "Precio: " << precio << endl;
@@ -101,6 +127,15 @@ void Juego::mostrarProducto(){
     cout << "Clasificacion: " << clasificacion << endl;
     cout << "Cantidad Maxima de Juegadores: " << jugadoresMax << endl;
 }
+
+/*
+ * * * * * * * * * * * * * Solicitar Atributos * * * * * * * * * * * * *
+ * 
+ * Solicitamos al usuario cada atributo de la clase
+ * 
+ * Param: -
+ * Return: -
+ */
 
 void Juego::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);

@@ -1,6 +1,22 @@
+/*
+ * Proyecto Tienda de Videojuegos
+ * Joanna Nicole Uriostegui Magaña
+ * A01711853
+ * 03/06/2024
+ * 
+ * El proyecto consiste en el modelado de una tienda de videojuegos,
+ * la cual tiene varios tipos de productos, desde juegos, consolas y 
+ * accesorios en el inventario, en el que se agregarán o eliminarán 
+ * los productos para poder ofrecerlos en la tienda. Los usuarios 
+ * pueden comprar con base en el inventario, pueden agregar o eliminar 
+ * productos a la clase carrito, así como obtener el costo de sus 
+ * productos y checar si hay descuentos disposibles.
+ * 
+ */
 #include <iostream>
 using namespace std;
 
+//Bibliotecas de clases del proyecto
 #include "Producto.h"
 #include "Juego.h"
 #include "Consola.h"

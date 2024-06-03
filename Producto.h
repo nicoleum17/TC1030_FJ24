@@ -1,3 +1,17 @@
+/*
+ * Proyecto Tienda de Videojuegos : Clase Producto
+ * Joanna Nicole Uriostegui Magaña
+ * A01711853
+ * 03/06/2024 
+ * 
+ * La clase Producto se establece como clase padre
+ * la cual posee atributos generales de cada tipo
+ * de producto, permite al usuario modificar el
+ * precio ya establecido, mostrar los atributos
+ * y solicitar los atributos necesario para crear
+ * otro objeto.
+ * 
+ */
 #include <iostream>
 #include <string>
 using namespace std;
@@ -5,7 +19,8 @@ using namespace std;
 #ifndef PRODUCTO
 #define PRODUCTO
 
-//Clase Padre: Producto
+/* * * * * * * * * * * * Clase Producto * * * * * * * * * * * * */
+// Clase Padre
 class Producto{
     protected:
         //Atributos de la clase padre
@@ -32,16 +47,14 @@ class Producto{
 
         //Métodos
         void actualizarPrecio(float);
-        virtual void mostrarProducto();
-        virtual void solicitarAtributos();
+        virtual void mostrarProducto() = 0; //abstracta
+        virtual void solicitarAtributos() = 0;
 
-        // Destructor virtual
-        virtual ~Producto() { }
 };
 
-///Implementación
+/* * * * * * * * * * * * Implementación * * * * * * * * * * * * */
 
-//Constructores
+//* * * * * * * Constructores
 Producto::Producto(){
     nombre = " ";
     precio = 0;
@@ -57,7 +70,7 @@ Producto::Producto(string nom, float price, string plat, string type){
     tipo = type;
 }
 
-//Setters
+//* * * * * * *Setters
 void Producto::setNombre(string nom){
     nombre = nom;
 }
@@ -74,19 +87,44 @@ void Producto::setTipo(string type){
     tipo = type;
 }
 
-//Métodos
+//* * * * * * * Métodos 
 
-//Se redefine el valor del precio del producto
+/*
+ * * * * * * * * * * * * * Actualizar Precio * * * * * * * * * * * * *
+ * 
+ * Se redefine el valor del precio del producto
+ * 
+ * Param: -
+ * Return: -
+ */
+
 void Producto::actualizarPrecio(float nuevo){
     precio = nuevo;
 }
 
-//Mostramos en pantalla los atributos del producto
+/*
+ * * * * * * * * * * * * * Mostrar Producto * * * * * * * * * * * * *
+ * 
+ * Mostramos en pantalla los atributos del producto mediante cout
+ * 
+ * Param: -
+ * Return: -
+ */
+
 void Producto::mostrarProducto(){
     cout << "Nombre: " << nombre << endl;
     cout << "Precio: " << precio << endl;
     cout << "Plataforma: " << plataforma << endl;
 }
+
+/*
+ * * * * * * * * * * * * * Solicitar Atributos * * * * * * * * * * * * *
+ * 
+ * Solicitamos al usuario cada atributo de la clase
+ * 
+ * Param: -
+ * Return: -
+ */
 
 void Producto::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
