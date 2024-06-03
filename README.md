@@ -25,7 +25,13 @@ Se deben de descargagr todos los archivos, cada clase y el main.
 Todo el código esta realizado con C++
 Compilar con "g++ main.cpp"
 Correr en windows con: "a.exe"
+El descuento de la compra de dos productos iguales, solo aplica upar aun par de productos
 
+## Documentación
+
+RAND, TIME, SRAND.
+    https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/?ref=header_search
+    
 ## Diagrama UML
 ![TiendaVideojuegos drawio (1)](https://github.com/nicoleum17/TC1030_FJ24/assets/142357118/3995c193-04e6-42c8-925f-9c5880fe8386)
 
