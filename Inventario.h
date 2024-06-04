@@ -11,6 +11,8 @@
  */
 
 #include <iostream>
+#include <string>
+#include <limits>
 using namespace std;
 
 #include "Producto.h"
@@ -48,6 +50,7 @@ class Inventario {
         void eliminarProd(int);
         Producto* getProducto(int);
         void mostrarInventario();
+        void buscarInventario(string);
 };
 
 /* * * * * * * * * * * * Implementación * * * * * * * * * * * * */
@@ -106,7 +109,7 @@ void Inventario::agregarProd(int n) {
     for (int i = 0; i < n; i++) {
         // Solicitamos el tipo de producto
         cout << "Ingresa el tipo de producto (Juego/Consola/Accesorio): "; cin >> tipo; 
-        cin.ignore();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         if (numProductos < 30) {
             if (tipo == "Juego") {
@@ -190,7 +193,29 @@ void Inventario::mostrarInventario() {
     cout << "\nInventario: \n"; 
     for (int i = 0; i < numProductos; i++) {
         cout << "\nProducto " << i + 1 << ":" << endl;
-        productos[i] -> mostrarProducto();
+        productos[i] -> mostrarProducto();    
+    }
+}
+
+/*
+ * * * * * * * * * * * * * Buscar en Inventario * * * * * * * * * * * *
+ * 
+ * Mostramos los atributos de cada objeto de acuerdo a su clase.
+ * Recorremos el array del inventario y mandamos a llamar el método 
+ * que corresponde para mostrarlos por clase.
+ * 
+ * Param: string del tipo de productos a mostrar
+ * Return: -
+ */
+
+void Inventario::buscarInventario(string tipo) {
+    cout << "\nInventario: \n"; 
+    for (int i = 0; i < numProductos; i++) {
+        if(productos[i]->getTipo() == tipo){
+            cout << "\nProducto " << i + 1 << ":" << endl;
+            productos[i] -> mostrarProducto();
+        }
+        
     }
 }
 

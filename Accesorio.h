@@ -113,7 +113,7 @@ void Accesorio::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
     cout << "Ingrese el precio: "; cin >> precio; cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Ingrese la plataforma: "; getline(cin, plataforma);
-    cout << "Ingrese el tipo de producto: "; cin >> tipo; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    tipo = "Accesorio"; 
     cout << "Ingresa el tipo de batería del accesorio: "; getline(cin, bateria);
     cout << "Ingresa el tipo de conexión del accesorio: "; getline(cin, conexion);
 }

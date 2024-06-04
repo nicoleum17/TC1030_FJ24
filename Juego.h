@@ -154,7 +154,7 @@ void Juego::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
     cout << "Ingrese el precio: "; cin >> precio; cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Ingrese la plataforma: "; getline(cin, plataforma);
-    cout << "Ingrese el tipo de producto: "; cin >> tipo; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    tipo = "Juego";    
     cout << "Ingresa el género del juego: "; getline(cin, genero);
     cout << "Ingresa el desarrollador del juego: "; getline(cin, desarrollador);
     cout << "Ingresa la clasificación del juego: "; cin >> clasificacion; cin.ignore(numeric_limits<streamsize>::max(), '\n');
