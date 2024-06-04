@@ -23,9 +23,11 @@ El programa servirá para la tienda de videojugos como un punto de venta en lín
 
 Se deben de descargagr todos los archivos, cada clase y el main. 
 Todo el código esta realizado con C++
-Compilar con "g++ main.cpp"
+Compilar con "g++ main.cpp -o main"
 Correr en windows con: "a.exe"
-El descuento de la compra de dos productos iguales, solo aplica upar aun par de productos
+El descuento de la compra de dos productos iguales, solo aplica el primer para un par de productos
+Cuando se solicita una decisión ingresar la información tal como se pide, sean mayúsculas o minúsculas
+Si se solicita una cantidad ingresar un número, si no texto o cadena de texto de ser posible.
 
 ## Documentación
 
