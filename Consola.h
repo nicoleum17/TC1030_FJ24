@@ -1,5 +1,20 @@
+/*
+ * Proyecto Tienda de Videojuegos : Clase Consola
+ * Joanna Nicole Uriostegui Magaña
+ * A01711853
+ * 03/06/2024 
+ * 
+ * La clase Consola hereda los atributos de la clase Producto.
+ * Permite al usuario ejecutar juegos, así como configurar la
+ * consola según sus preferencias y mostrar y solicitar sus 
+ * atributos.
+ * 
+ */
+
 #include <iostream>
 #include <string>
+#include <limits> // Necesario para numeric_limits
+
 
 #include "Producto.h"
 using namespace std;
@@ -81,11 +96,11 @@ void Consola::ejecutarJuego(){
 void Consola::configuracion(){
     string respuestas;
 
-    cout << "Iniciar Sesion: "; cin >> respuestas;
-    cout << "¿Conectar cable HDMI?: "; cin >> respuestas;
-    cout << "Selecciona la entrada: "; cin >> respuestas;
-    cout << "Conexión Wi-Fi o cable Ethernet: "; cin >> respuestas;
-    cout << "Ajuste de audio: "; cin >> respuestas;
+    cout << "Iniciar Sesion: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "¿Conectar cable HDMI?: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Selecciona la entrada: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Conexión Wi-Fi o cable Ethernet: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ajuste de audio: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 /*
@@ -117,11 +132,11 @@ void Consola::mostrarProducto(){
 
 void Consola::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
-    cout << "Ingrese el precio: "; cin >> precio;
+    cout << "Ingrese el precio: "; cin >> precio; cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Ingrese la plataforma: "; getline(cin, plataforma);
-    cout << "Ingrese el tipo de producto: "; cin >> tipo;
+    cout << "Ingrese el tipo de producto: "; cin >> tipo; cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Ingresa el fabricante de la consola: "; getline(cin, fabricante);
-    cout << "Ingresa el modelo de la consola: "; getline(cin, modelo);
+    cout << "Ingresa el modelo de la consola: "; getline(cin, modelo); cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Ingresa el almacenamiento de la consola: "; cin >> almacenamiento;
 }
 

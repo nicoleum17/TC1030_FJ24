@@ -1,6 +1,20 @@
+/*
+ * Proyecto Tienda de Videojuegos : Clase Accesorio
+ * Joanna Nicole Uriostegui Magaña
+ * A01711853
+ * 03/06/2024 
+ * 
+ * La clase Accesorio hereda los atributos de la clase Producto.
+ * Permite al usuario rmostrar la bateria del accesorio, así como
+ * mostrar y solicitar atributos.
+ * 
+ */
+
 #include <iostream>
 #include <string>
 #include <time.h>
+#include <limits> // Necesario para numeric_limits
+
 
 #include "Producto.h"
 using namespace std;
@@ -97,9 +111,9 @@ void Accesorio::mostrarProducto(){
 
 void Accesorio::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
-    cout << "Ingrese el precio: "; cin >> precio;
+    cout << "Ingrese el precio: "; cin >> precio; cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Ingrese la plataforma: "; getline(cin, plataforma);
-    cout << "Ingrese el tipo de producto: "; cin >> tipo;
+    cout << "Ingrese el tipo de producto: "; cin >> tipo; cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Ingresa el tipo de batería del accesorio: "; getline(cin, bateria);
     cout << "Ingresa el tipo de conexión del accesorio: "; getline(cin, conexion);
 }

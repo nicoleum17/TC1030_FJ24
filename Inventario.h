@@ -105,7 +105,8 @@ void Inventario::agregarProd(int n) {
 
     for (int i = 0; i < n; i++) {
         // Solicitamos el tipo de producto
-        cout << "Ingresa el tipo de producto (Juego/Consola/Accesorio): "; cin >> tipo;
+        cout << "Ingresa el tipo de producto (Juego/Consola/Accesorio): "; cin >> tipo; 
+        cin.ignore();
 
         if (numProductos < 30) {
             if (tipo == "Juego") {

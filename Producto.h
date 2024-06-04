@@ -12,8 +12,11 @@
  * otro objeto.
  * 
  */
+
 #include <iostream>
 #include <string>
+#include <limits> // Necesario para numeric_limits
+
 using namespace std;
 
 #ifndef PRODUCTO
@@ -70,7 +73,7 @@ Producto::Producto(string nom, float price, string plat, string type){
     tipo = type;
 }
 
-//* * * * * * *Setters
+//* * * * * * * Setters
 void Producto::setNombre(string nom){
     nombre = nom;
 }
@@ -128,9 +131,9 @@ void Producto::mostrarProducto(){
 
 void Producto::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
-    cout << "Ingrese el precio: "; cin >> precio;
+    cout << "Ingrese el precio: "; cin >> precio; cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Ingrese la plataforma: "; getline(cin, plataforma);
-    cout << "Ingrese el tipo de producto: "; cin >> tipo;
+    cout << "Ingrese el tipo de producto: "; cin >> tipo; cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 #endif
