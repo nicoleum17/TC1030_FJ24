@@ -164,6 +164,7 @@ void Carrito::aplicarDesc(){
     for(int i = 0; i < numCompras; i++){
         for(int j = i + 1; j < numCompras; j++){
             if(compras[i]->getNombre() == compras[j]->getNombre()){
+                cout << "Estoy dentro del if";
                 indice = i;
                 cupon = 0.2;
                 break;
@@ -181,6 +182,7 @@ void Carrito::aplicarDesc(){
     } else {
         cout << "No fue posible aplicar ningun descuento." << endl;
     }
+    
 }
 
 #endif

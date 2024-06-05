@@ -110,9 +110,9 @@ int main() {
         cout << "\nDeseas agregar mas productos? (S/N): "; 
         cin >> respuesta; cin.ignore();
     }
-    
     // Checamos si hay descuentos aplicables: 
     carritoCompra.aplicarDesc();
+    cout << "\nSali de aplicar el descuento";
     carritoCompra.mostrarCarrito();
     cout << "\nDescuento: " << carritoCompra.getCupon();
     cout << "\nTotal: " << carritoCompra.calcularTotal();
