@@ -15,7 +15,6 @@
  */
 #include <iostream>
 #include <string>
-#include <limits>
 using namespace std;
 
 //Bibliotecas de clases del proyecto
@@ -47,29 +46,29 @@ int main() {
 
     //Pregunta para añadir productos
     cout << "\nDeseas agregar mas productos al inventario? (S/N): ";
-    cin >> respuesta; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin >> respuesta; cin.ignore();
 
     // R = 'S' para agregar la cantidad de productos indicados
     if(respuesta == 'S'){
         cout << "\nIngresa la cantidad de productos a agregar al inventario: "; cin >> n;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); inventarioNicole.agregarProd(n);
+        cin.ignore(); inventarioNicole.agregarProd(n);
         inventarioNicole.mostrarInventario();
     }
 
     //Pregunta para eliminar algún producto
     cout << "\nDeseas eliminar algun producto del inventario? (S/N): ";
-    cin >> respuesta; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin >> respuesta; cin.ignore();
 
     //Eliminamos la cantidad de productos indicados
     if(respuesta == 'S'){
         cout << "\nIngresa la cantidad de productos a eliminar del inventario: "; cin >> n;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        cin.ignore(); 
         for(int i = 0; i < n; i++){
             inventarioNicole.mostrarInventario();
 
             cout << "Indica el indice del producto a eliminar: ";
             cin >> indice;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');          
+            cin.ignore();          
             inventarioNicole.eliminarProd(indice - 1);
         }
         inventarioNicole.mostrarInventario();
@@ -83,30 +82,33 @@ int main() {
 
     //Le otrogamos nombre al carrito
     cout << "\n\n---------------------------------";
-    cout << "\nAhora actuaras como el usuario";
     cout << "\n\nUsuario, bienvenido a GamesOn.";
     cout << "\nIngresa tu nombre: "; cin >> nombre;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  
+    cin.ignore();  
     carritoCompra.setUsuario(nombre);
 
     //ciclo para agregar los productos que usuario desee a su carrito de compras
-    cout << "Deseas comprar algun producto? (S/N): "; 
-    cin >> respuesta; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "\nDeseas comprar algun producto? (S/N): "; 
+    cin >> respuesta; cin.ignore();
 
     while(respuesta == 'S'){
         //Mostramos el inventario al usuario por tipo de producto
-        cout<< "\nEn GamesOn tenemos distintos tipos de productos, a continuacion\n";
-        cout << "elige el tipo de producto que desees comprar, Juego / Consola / Accesorio: ";
+        do{
+            cout<< "\nEn GamesOn tenemos distintos tipos de productos, a continuacion\n";
+            cout << "elige el tipo de producto que desees comprar, Juego / Consola / Accesorio: ";
+            cin >> tipo; cin.ignore();
+        }while(tipo != "Juego" && tipo != "Consola" && tipo != "Accesorio");
+
         cout << "\nEste es el inventario de "<< tipo << "s: \n";
         inventarioNicole.buscarInventario(tipo);
 
         //Solicitamos el indicepara agregarlo al carrito de compras
         cout << "\nIndica el indice del producto que deseas agregar: "; cin >> indice;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
         carritoCompra.agregarProd(inventarioNicole.getProducto(indice-1));
 
         cout << "\nDeseas agregar mas productos? (S/N): "; 
-        cin >> respuesta; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin >> respuesta; cin.ignore();
     }
     
     // Checamos si hay descuentos aplicables: 

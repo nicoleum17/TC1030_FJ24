@@ -12,7 +12,6 @@
 
 #include <iostream>
 #include <string>
-#include <limits> // Necesario para numeric_limits
 
 #include "Producto.h"
 using namespace std;
@@ -138,7 +137,7 @@ void Juego::mostrarProducto(){
     cout << "Genero: " << genero << endl;
     cout << "Desarrollador: " << desarrollador << endl;
     cout << "Clasificacion: " << clasificacion << endl;
-    cout << "Cantidad Maxima de Juegadores: " << jugadoresMax << endl;
+    cout << "Cantidad Maxima de Jugadores: " << jugadoresMax << endl;
 }
 
 /*
@@ -152,13 +151,13 @@ void Juego::mostrarProducto(){
 
 void Juego::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
-    cout << "Ingrese el precio: "; cin >> precio; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ingrese el precio: "; cin >> precio; cin.ignore();
     cout << "Ingrese la plataforma: "; getline(cin, plataforma);
     tipo = "Juego";    
-    cout << "Ingresa el género del juego: "; getline(cin, genero);
+    cout << "Ingresa el genero del juego: "; getline(cin, genero);
     cout << "Ingresa el desarrollador del juego: "; getline(cin, desarrollador);
-    cout << "Ingresa la clasificación del juego: "; cin >> clasificacion; cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cout << "Ingresa el número máximo de jugadores: "; cin >> jugadoresMax; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ingresa la clasificación del juego: +"; cin >> clasificacion; cin.ignore();
+    cout << "Ingresa el numero maximo de jugadores: "; cin >> jugadoresMax; cin.ignore();
 }
 
 

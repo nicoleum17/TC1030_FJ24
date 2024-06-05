@@ -13,8 +13,6 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-#include <limits> // Necesario para numeric_limits
-
 
 #include "Producto.h"
 using namespace std;
@@ -111,7 +109,7 @@ void Accesorio::mostrarProducto(){
 
 void Accesorio::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
-    cout << "Ingrese el precio: "; cin >> precio; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ingrese el precio: "; cin >> precio; cin.ignore();
     cout << "Ingrese la plataforma: "; getline(cin, plataforma);
     tipo = "Accesorio"; 
     cout << "Ingresa el tipo de batería del accesorio: "; getline(cin, bateria);

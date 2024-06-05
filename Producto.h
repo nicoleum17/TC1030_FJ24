@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <string>
-#include <limits> // Necesario para numeric_limits
 
 using namespace std;
 
@@ -131,7 +130,7 @@ void Producto::mostrarProducto(){
 
 void Producto::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
-    cout << "Ingrese el precio: "; cin >> precio; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ingrese el precio: "; cin >> precio; cin.ignore();
     cout << "Ingrese la plataforma: "; getline(cin, plataforma);
     tipo = "Producto";
 }

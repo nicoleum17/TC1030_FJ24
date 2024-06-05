@@ -13,8 +13,6 @@
 
 #include <iostream>
 #include <string>
-#include <limits> // Necesario para numeric_limits
-
 
 #include "Producto.h"
 using namespace std;
@@ -96,11 +94,11 @@ void Consola::ejecutarJuego(){
 void Consola::configuracion(){
     string respuestas;
 
-    cout << "Iniciar Sesion: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cout << "¿Conectar cable HDMI?: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cout << "Selecciona la entrada: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cout << "Conexión Wi-Fi o cable Ethernet: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cout << "Ajuste de audio: "; cin >> respuestas; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Iniciar Sesion: "; cin >> respuestas; cin.ignore();
+    cout << "¿Conectar cable HDMI?: "; cin >> respuestas; cin.ignore();
+    cout << "Selecciona la entrada: "; cin >> respuestas; cin.ignore();
+    cout << "Conexión Wi-Fi o cable Ethernet: "; cin >> respuestas; cin.ignore();
+    cout << "Ajuste de audio: "; cin >> respuestas; cin.ignore();
 }
 
 /*
@@ -132,11 +130,11 @@ void Consola::mostrarProducto(){
 
 void Consola::solicitarAtributos() {
     cout << "Ingrese el nombre del producto: "; getline(cin, nombre);
-    cout << "Ingrese el precio: "; cin >> precio; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ingrese el precio: "; cin >> precio; cin.ignore();
     cout << "Ingrese la plataforma: "; getline(cin, plataforma);
     tipo = "Consola"; 
     cout << "Ingresa el fabricante de la consola: "; getline(cin, fabricante);
-    cout << "Ingresa el modelo de la consola: "; getline(cin, modelo); cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ingresa el modelo de la consola: "; getline(cin, modelo); cin.ignore();
     cout << "Ingresa el almacenamiento de la consola: "; cin >> almacenamiento;
 }
 
