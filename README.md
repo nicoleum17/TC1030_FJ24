@@ -21,24 +21,49 @@ El programa servirá para la tienda de videojugos como un punto de venta en lín
 
 ## Consideraciones.
 
-# Para compilar
+- Para compilar
+
 Se deben de descargagr todos los archivos, cada clase y el main. 
 Todo el código esta realizado con C++
 Compilar con "g++ main.cpp"
 Correr en windows con: "a.exe"
 
-# Al usarse
+- Al usarse
+  
 El descuento de la compra de dos productos iguales, solo aplica el primer para un par de productos
 Cuando se solicita una decisión ingresar la información tal como se pide, sean mayúsculas o minúsculas
 Si se solicita una cantidad ingresar un número, si no texto o cadena de texto de ser posible.
 
 ## Documentación
 
-RAND, TIME, SRAND.
-    https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/?ref=header_search
+- RAND, TIME, SRAND.
+
+Obtenemos números aleatorios con base en un valor semilla.
+
+    - GeeksforGeeks. (2023, May 7). rand() and srand() in C. GeeksforGeeks. 
+  
+           https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/?ref=header_search
     
+
+- GETLINE
+  
+Permite leer toda la cadena de texto de una misma linea sin importar la existencia de espacios.
+
+     - GeeksforGeeks. (2024, January 30). getline (string) in C. GeeksforGeeks. 
+    
+            https://www.geeksforgeeks.org/getline-string-c/?ref=header_search
+
+-CIN.IGNORE
+
+Ayuda a limpiar el buffer para que los getline no lean el salto de línea.
+
+     - GeeksforGeeks. (2022, October 30). Clearing the input buffer in CC. GeeksforGeeks. 
+     
+            https://www.geeksforgeeks.org/clearing-the-input-buffer-in-cc/?ref=header_search
+            
 ## Diagrama UML
-![TiendaVideojuegos drawio (1)](https://github.com/nicoleum17/TC1030_FJ24/assets/142357118/3995c193-04e6-42c8-925f-9c5880fe8386)
+![TiendaVideojuegos drawio (2)](https://github.com/nicoleum17/TC1030_FJ24/assets/142357118/a8d3ed39-f8f0-406c-a901-461385a836aa)
+
 
 
 
