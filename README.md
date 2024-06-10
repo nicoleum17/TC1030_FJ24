@@ -30,9 +30,13 @@ Correr en windows con: "a.exe"
 
 - Al usarse
   
-El descuento de la compra de dos productos iguales, solo aplica el primer para un par de productos
-Cuando se solicita una decisión ingresar la información tal como se pide, sean mayúsculas o minúsculas
+El descuento de la compra de dos productos iguales, solo aplica el primer para un par de productos.
+
+Cuando se solicita una decisión ingresar la información tal como se pide, sean mayúsculas o minúsculas.
+
 Si se solicita una cantidad ingresar un número, si no texto o cadena de texto de ser posible.
+
+Debes de ser muy cuidadoso ingresando indices válidos al carrito de compras.
 
 ## Documentación
 
