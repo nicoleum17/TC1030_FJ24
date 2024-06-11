@@ -36,8 +36,6 @@ Cuando se solicita una decisión ingresar la información tal como se pide, sean
 
 Si se solicita una cantidad ingresar un número, si no texto o cadena de texto de ser posible.
 
-Debes de ser muy cuidadoso ingresando indices válidos al carrito de compras.
-
 ## Documentación
 
 - RAND, TIME, SRAND.
