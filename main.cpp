@@ -102,20 +102,48 @@ int main() {
         cout << "\nEste es el inventario de "<< tipo << "s: \n";
         inventarioNicole.buscarInventario(tipo);
 
-        //Solicitamos el indicepara agregarlo al carrito de compras
-        cout << "\nIndica el indice del producto que deseas agregar: "; cin >> indice;
-        cin.ignore();
+        // Creamos un arreglo para verificar los indices de cada categoria
+        int cant = inventarioNicole.getNumProductos();
+        int indicesValidos[cant], indices = 0;
+        for (int i = 0; i < cant; i++) {
+            if (inventarioNicole.getProducto(i)->getTipo() == tipo) {
+                indicesValidos[indices] = i;
+                indices++;
+            }
+        }
+
+        bool indiceValido = false;
+
+        //Solicitamos el indice para agregarlo al carrito de compras
+        do {
+            cout << "\nIndica el indice del producto que deseas agregar: "; 
+            cin >> indice;
+            cin.ignore();
+
+            //verificamos si el indice es valido de la categoría
+            for (int i = 0; i < indices; i++) {
+                if (indicesValidos[i] == indice - 1) {
+                    indiceValido = true;
+                }
+            }
+
+            if (!indiceValido) {
+                cout << "Indice invalido. Por favor ingrese un indice valido.\n";
+            }
+        } while (!indiceValido);
+
         carritoCompra.agregarProd(inventarioNicole.getProducto(indice-1));
 
         cout << "\nDeseas agregar mas productos? (S/N): "; 
         cin >> respuesta; cin.ignore();
     }
+    
     // Checamos si hay descuentos aplicables: 
     carritoCompra.aplicarDesc();
     cout << "\nSali de aplicar el descuento";
     carritoCompra.mostrarCarrito();
     cout << "\nDescuento: " << carritoCompra.getCupon();
     cout << "\nTotal: " << carritoCompra.calcularTotal();
-
+    //segmentation for
     return 0;
 }

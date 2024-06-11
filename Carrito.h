@@ -32,7 +32,7 @@ class Carrito {
         Producto* compras[100]; //Array de productos
     public:
         //Constructor vacío
-        Carrito():numCompras(0) {}
+        Carrito():numCompras(0), cupon(0) {}
         //Sobrecarga de constructor
         Carrito(string);
 
@@ -155,34 +155,27 @@ float Carrito::calcularTotal(){
  */
 
 void Carrito::aplicarDesc(){
-    int indice;
-    float cupon;
 
     //Identificamos el tipo de descuento aplicable
 
     //20% para 2 compras del mismo producto
-    for(int i = 0; i < numCompras; i++){
-        for(int j = i + 1; j < numCompras; j++){
-            if(compras[i]->getNombre() == compras[j]->getNombre()){
-                cout << "Estoy dentro del if";
-                indice = i;
-                cupon = 0.2;
-                break;
-            }
-        }
-        if(indice != -1) break;
-    }
+    int i = 0, j = numCompras - 1;
+    float precio;
+    string ini = compras[i] -> getNombre();
+    string fin = compras[j] -> getNombre();
 
-    //Realizamos el descuento
-    if(indice != -1) {
-        float precio = compras[indice] -> getPrecio();
-        float precioDescuento = precio * (1 - cupon);
-        compras[indice] -> setPrecio(precioDescuento);
-        cout << "Producto con descuento aplicado. Nuevo precio: " << precioDescuento << endl;
-    } else {
-        cout << "No fue posible aplicar ningun descuento." << endl;
+    while(i <= j){
+        if(ini == fin){
+            precio = compras[i] -> getPrecio();
+            precio *=.8;
+            compras[i] -> actualizarPrecio(precio);
+            cupon = 20;
+        }
+        i++;
+        j--;
+        ini = compras[i] -> getNombre();
+        fin = compras[j] -> getNombre();
     }
-    
 }
 
 #endif
